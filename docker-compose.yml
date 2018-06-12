@@ -1,14 +1,13 @@
 version: '3'
-
 services:
-	jenkins:
-		image:jenkins:2.60.3
-		command: >
-    		bash -c "ln -snf /usr/share/zoneinfo/Asia/Phnom_Penh /etc/localtime && echo Asia/Phnom_Penh > /etc/timezone"
-		volumes:
-			- /var/jenkins_home:/var/jenkins_home
-			- /var/run/docker.sock:/var/run/docker.sock
-			- /usr/bin/docker:/usr/bin/docker
-		ports:
-			- 8080:8080
-			- 50000:50000
+ jenkins:
+  image:jenkins:2.60.3
+   command: >
+    bash -c "ln -snf /usr/share/zoneinfo/Asia/Phnom_Penh /etc/localtime && echo Asia/Phnom_Penh > /etc/timezone"
+   volumes:
+    - /var/jenkins_home:/var/jenkins_home
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
+   ports:
+    - 8080:8080
+    - 50000:50000
